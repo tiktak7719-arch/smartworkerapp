@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -eu
+
+# Render assigns PORT at runtime and publishes the public URL in RENDER_EXTERNAL_URL.
+export SERVER_NAME=":${PORT:-10000}"
+export APP_URL="${APP_URL:-${RENDER_EXTERNAL_URL:-http://localhost}}"
+
+mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views storage/logs bootstrap/cache
+chmod -R ug+rwX storage bootstrap/cache
+
+# Free Render services do not support a separate pre-deploy command. These tasks
+# are idempotent and ensure a new deployment has an up-to-date schema and demo data.
+php artisan package:discover --ansi
+php artisan migrate --force --seed --ansi
+php artisan config:cache --ansi
+php artisan view:cache --ansi
+
+exec frankenphp run --config /etc/caddy/Caddyfile --adapter caddyfile

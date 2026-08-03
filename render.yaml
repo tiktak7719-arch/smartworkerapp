@@ -1,0 +1,45 @@
+services:
+  - type: web
+    name: smartworkerapp-tiktak7719
+    runtime: docker
+    plan: free
+    region: singapore
+    autoDeployTrigger: commit
+    healthCheckPath: /up
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: APP_NAME
+        value: SmartWorker
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        sync: false
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_URL
+        fromDatabase:
+          name: smartworkerapp-db
+          property: connectionString
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: DEMO_ADMIN_PASSWORD
+        generateValue: true
+      - key: DEMO_EMPLOYER_PASSWORD
+        generateValue: true
+      - key: DEMO_CANDIDATE_PASSWORD
+        generateValue: true
+
+databases:
+  - name: smartworkerapp-db
+    plan: free
+    region: singapore
+    databaseName: smartworker
+    user: smartworker

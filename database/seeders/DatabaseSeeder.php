@@ -9,37 +9,38 @@ use App\Models\User;
 use App\Models\UserProfile;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
         // ── Admin user ───────────────────────────────────
-        $admin = User::create([
+        $admin = User::firstOrCreate(['email' => 'admin@smartworker.com'], [
             'name'     => 'Admin',
             'email'    => 'admin@smartworker.com',
-            'password' => Hash::make('admin123'),
+            'password' => Hash::make((string) env('DEMO_ADMIN_PASSWORD', Str::random(64))),
             'role'     => 'admin',
         ]);
-        UserProfile::create(['user_id' => $admin->id]);
+        UserProfile::firstOrCreate(['user_id' => $admin->id]);
 
         // ── Demo employer ─────────────────────────────────
-        $employer = User::create([
+        $employer = User::firstOrCreate(['email' => 'employer@smartworker.com'], [
             'name'     => 'Demo Employer',
             'email'    => 'employer@smartworker.com',
-            'password' => Hash::make('password'),
+            'password' => Hash::make((string) env('DEMO_EMPLOYER_PASSWORD', Str::random(64))),
             'role'     => 'employer',
         ]);
-        UserProfile::create(['user_id' => $employer->id]);
+        UserProfile::firstOrCreate(['user_id' => $employer->id]);
 
         // ── Demo seeker ───────────────────────────────────
-        $candidate = User::create([
+        $candidate = User::firstOrCreate(['email' => 'candidate@smartworker.com'], [
             'name'     => 'Demo Candidate',
             'email'    => 'candidate@smartworker.com',
-            'password' => Hash::make('password'),
+            'password' => Hash::make((string) env('DEMO_CANDIDATE_PASSWORD', Str::random(64))),
             'role'     => 'candidate',
         ]);
-        UserProfile::create(['user_id' => $candidate->id]);
+        UserProfile::firstOrCreate(['user_id' => $candidate->id]);
 
         // ── Categories ────────────────────────────────────
         $categories = [
@@ -56,9 +57,8 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($categories as $cat) {
-            Category::create([
+            Category::updateOrCreate(['slug' => \Illuminate\Support\Str::slug($cat['name'])], [
                 'name'      => $cat['name'],
-                'slug'      => \Illuminate\Support\Str::slug($cat['name']),
                 'icon'      => $cat['icon'],
                 'is_active' => true,
             ]);
