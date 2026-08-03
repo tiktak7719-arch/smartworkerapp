@@ -1,0 +1,33 @@
+.section-intro.section-intro-light {
+  background: #fff;
+  color: #444;
+}
+
+.section-intro.section-intro-light:before {
+  display: none;
+}
+
+.section-intro-light .search-container h1 {
+  color: #444;
+}
+
+.section-intro-light .search-container .content {
+  background: transparent;
+}
+
+.section-intro-light .popular-jobs,
+.section-intro-light .popular-jobs b {
+  color: #444;
+}
+
+.section-intro-light .popular-jobs a {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  color: #444;
+}
+
+.section-intro-light .popular-jobs a:hover {
+  background: #0d5bd7;
+  border-color: #0d5bd7;
+  color: #fff;
+}
