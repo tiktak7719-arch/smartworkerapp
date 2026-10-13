@@ -18,7 +18,7 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --no-scripts
 
 # FrankenPHP provides a production PHP server and Caddy web server in one image.
-FROM dunglas/frankenphp:1-php8.3-bookworm
+FROM dunglas/frankenphp:1-php8.5-bookworm
 
 WORKDIR /app
 

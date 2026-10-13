@@ -1,0 +1,171 @@
+{
+  "input": "C:\\Users\\Laptop Valley\\Downloads\\Thesis format.docx",
+  "fonts_by_char_count": {
+    "Arial": 1412,
+    "Segoe UI": 1247
+  },
+  "direct_run_formatting_runs": 1174,
+  "direct_paragraph_formatting_paragraphs": 673,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 1,
+      "text": "VIRTUAL STUDY GROUP",
+      "style": "Normal"
+    },
+    {
+      "para_index": 11,
+      "text": "Sharjeel Muhammad\t(UOS216023028)",
+      "style": "Normal"
+    },
+    {
+      "para_index": 12,
+      "text": "Luqman Khan (UOS216023037)",
+      "style": "Normal"
+    },
+    {
+      "para_index": 15,
+      "text": "Mr. Abdul Haq",
+      "style": "Normal"
+    },
+    {
+      "para_index": 23,
+      "text": "Department of Computer and Software Technology",
+      "style": "Normal"
+    },
+    {
+      "para_index": 27,
+      "text": "Declaration",
+      "style": "Normal"
+    },
+    {
+      "para_index": 51,
+      "text": "Forwarding Sheet",
+      "style": "Normal"
+    },
+    {
+      "para_index": 96,
+      "text": "Dedication",
+      "style": "Normal"
+    },
+    {
+      "para_index": 98,
+      "text": "Final Approval",
+      "style": "Normal"
+    },
+    {
+      "para_index": 104,
+      "text": "Final Project Evaluation Committee",
+      "style": "Normal"
+    },
+    {
+      "para_index": 108,
+      "text": "External Examiner",
+      "style": "Normal"
+    },
+    {
+      "para_index": 115,
+      "text": "Supervisor",
+      "style": "Normal"
+    },
+    {
+      "para_index": 122,
+      "text": "Chairman",
+      "style": "Normal"
+    },
+    {
+      "para_index": 149,
+      "text": "Luqman Khan and Sharjeel Muhammad",
+      "style": "Normal"
+    },
+    {
+      "para_index": 173,
+      "text": "Table of Contents",
+      "style": "Normal"
+    },
+    {
+      "para_index": 290,
+      "text": "Software Development Methodology",
+      "style": "Normal"
+    },
+    {
+      "para_index": 327,
+      "text": "Final Deployment: 18 Aug\u00a02025",
+      "style": "Body Text"
+    },
+    {
+      "para_index": 394,
+      "text": "Software Requirement Specification",
+      "style": "Normal"
+    },
+    {
+      "para_index": 398,
+      "text": "Functional Requirements",
+      "style": "List Paragraph"
+    },
+    {
+      "para_index": 399,
+      "text": "Non-functional Requirements",
+      "style": "List Paragraph"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 1,
+        "text": "VIRTUAL STUDY GROUP",
+        "style": "Normal"
+      },
+      {
+        "para_index": 5,
+        "text": "",
+        "style": "Body Text"
+      },
+      {
+        "para_index": 9,
+        "text": "",
+        "style": "Body Text"
+      },
+      {
+        "para_index": 10,
+        "text": "Submitted by:",
+        "style": "Heading 2"
+      },
+      {
+        "para_index": 11,
+        "text": "Sharjeel Muhammad\t(UOS216023028)",
+        "style": "Normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 1,
+        "run_text": "VIRTUAL STUDY GROUP",
+        "style": "Normal"
+      },
+      {
+        "para_index": 10,
+        "run_text": "Submitted",
+        "style": "Heading 2"
+      },
+      {
+        "para_index": 10,
+        "run_text": " ",
+        "style": "Heading 2"
+      },
+      {
+        "para_index": 10,
+        "run_text": "by:",
+        "style": "Heading 2"
+      },
+      {
+        "para_index": 11,
+        "run_text": "Sharjeel Muhammad",
+        "style": "Normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}
