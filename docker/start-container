@@ -16,4 +16,4 @@ php artisan migrate --force --seed --ansi
 php artisan config:cache --ansi
 php artisan view:cache --ansi
 
-exec frankenphp run --config /etc/caddy/Caddyfile --adapter caddyfile
+exec php artisan serve --host=0.0.0.0 --port="${PORT:-10000}"
